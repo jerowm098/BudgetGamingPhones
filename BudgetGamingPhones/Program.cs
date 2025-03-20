@@ -1,117 +1,162 @@
-﻿using System;
+﻿using System; // Import the System namespace to use basic functionalities
+using System.Collections.Generic; // Import collections to use List
+using System.Threading; // Import threading to add delay
 
-namespace BudgetGamingPhones
+namespace InfinixShop
 {
     internal class Program
     {
+        // List to store items added to the shopping cart
+        static List<string> cart = new List<string>();
+
+        // Menu options for the main menu and submenus
+        static string[] mainMenuOptions = new string[] { "[1] Add Item", "[2] Remove Item", "[3] View Cart", "[4] Exit" };
+        static string[] phoneCategories = new string[] { "[1] Entry Level Phones", "[2] Mid-range Phones", "[3] High-end Phones", "[4] Back" };
+        static string[] entryLevelPhones = new string[] { "[1] Infinix Hot 50i 8GB RAM", "[2] Infinix Smart 9 8GB RAM", "[3] Infinix Note 40s 8GB RAM", "[4] Back" };
+        static string[] midRangePhones = new string[] { "[1] Infinix Note 40 5G 20GB RAM", "[2] Infinix GT 20 Pro 5G 20GB RAM", "[3] Back" };
+        static string[] highEndPhones = new string[] { "[1] Infinix Zero Flip 32GB RAM", "[2] Back" };
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Infinix Shop");
-            Console.ReadKey();
-            Console.WriteLine("Wanna take a look for our Latest Products?");
-            Console.WriteLine("[1] View Shop?\n[2] No Thanks, Its Cheap!");
+            // Initial prompt to ask the user if they want to view the shop
+            Console.WriteLine("Wanna take a look at our Latest Products?");
+            Console.WriteLine("[1] View Shop\n[2] No Thanks");
 
-            int userChoice = Convert.ToInt16(Console.ReadLine());
+            int userChoice = GetUserInput();
 
-            if (userChoice == 2)
+            switch (userChoice)
             {
-                Console.WriteLine("Thank you for visiting! Have a great day!");
-                return;
+                case 1:
+                    DisplayMainMenu();
+                    break;
+                case 2:
+                    Console.WriteLine("Thank you for visiting! Have a great day!");
+                    break;
+            }
+        }
+
+        static void DisplayMainMenu()
+        {
+            Console.WriteLine("------------------- \nINFINIX SHOP MENU");
+            foreach (var option in mainMenuOptions)
+            {
+                Console.WriteLine(option);
             }
 
-            while (true)
+            int userChoice = GetUserInput();
+            switch (userChoice)
             {
-                Console.WriteLine("Choose from the following options:");
-                Console.WriteLine("[1] Entry Level Phones (Price range: 10,000)");
-                Console.WriteLine("[2] Mid-range Phones (Price range: 20,000)");
-                Console.WriteLine("[3] High-end Phones (Price range: 30,000)");
-                Console.WriteLine("[4] Back");
+                case 1:
+                    DisplayPhoneCategories();
+                    break;
+                case 2:
+                    RemoveItem();
+                    break;
+                case 3:
+                    ViewCart();
+                    break;
+                default:
+                    Console.WriteLine("Thank you for visiting! Have a great day!");
+                    break;
+            }
+        }
 
-                int phoneChoice = Convert.ToInt16(Console.ReadLine());
+        static void DisplayPhoneCategories()
+        {
+            Console.WriteLine("------------------- \nChoose from the options below:");
+            foreach (var category in phoneCategories)
+            {
+                Console.WriteLine(category);
+            }
 
-                if (phoneChoice == 4)
+            int userChoice = GetUserInput();
+            switch (userChoice)
+            {
+                case 1:
+                    DisplayPhones(entryLevelPhones);
+                    break;
+                case 2:
+                    DisplayPhones(midRangePhones);
+                    break;
+                case 3:
+                    DisplayPhones(highEndPhones);
+                    break;
+                default:
+                    DisplayMainMenu();
+                    break;
+            }
+        }
+
+        static void DisplayPhones(string[] phones)
+        {
+            Console.WriteLine("------------------- \nPick your Choice:");
+            foreach (var phone in phones)
+            {
+                Console.WriteLine(phone);
+            }
+
+            int userChoice = GetUserInput();
+            if (userChoice >= 1 && userChoice < phones.Length)
+            {
+                cart.Add(phones[userChoice - 1].Substring(4)); // Add phone to cart
+                Console.WriteLine($"------------------- \n{phones[userChoice - 1].Substring(4)} added to cart!");
+            }
+            DisplayMainMenu();
+        }
+
+        static void RemoveItem()
+        {
+            Console.WriteLine("------------------- \nREMOVE ITEM: ");
+            if (cart.Count == 0)
+            {
+                Console.WriteLine("Your cart is empty!");
+            }
+            else
+            {
+                for (int i = 0; i < cart.Count; i++)
                 {
-                    Console.WriteLine("Returning to main menu...");
-                    continue;
+                    Console.WriteLine($"[{i + 1}] {cart[i]}");
                 }
+                Console.WriteLine("[0] Back");
 
-                if (phoneChoice == 1)
+                int userChoice = GetUserInput();
+                if (userChoice > 0 && userChoice <= cart.Count)
                 {
-                    Console.WriteLine("Select an Entry Level phone:");
-                    Console.WriteLine("[1] Infinix Hot 50i 8GB RAM");
-                    Console.WriteLine("[2] Infinix Smart 9 8GB RAM");
-                    Console.WriteLine("[3] Infinix Note 40s 8GB RAM");
-                    Console.WriteLine("[4] Back");
-                }
-                else if (phoneChoice == 2)
-                {
-                    Console.WriteLine("Select a Mid-range phone:");
-                    Console.WriteLine("[1] Infinix Note 40 5G 20GB RAM");
-                    Console.WriteLine("[2] Infinix GT 20 Pro 5G 20GB RAM");
-                    Console.WriteLine("[3] Back");
-                }
-                else if (phoneChoice == 3)
-                {
-                    Console.WriteLine("Select a High-end phone:");
-                    Console.WriteLine("[1] Infinix Zero Flip 32GB RAM");
-                    Console.WriteLine("[2] Back");
-                }
-                else
-                {
-                    Console.WriteLine("Invalid choice, please try again.");
-                    continue;
-                }
-
-                int selectedPhone = Convert.ToInt16(Console.ReadLine());
-
-                // Check if user wants to go back
-                if (selectedPhone == 4 || selectedPhone == 3 && phoneChoice != 1)
-                {
-                    Console.WriteLine("Returning to phone selection...");
-                    continue;
-                }
-
-                string phoneName = "";
-
-                switch (phoneChoice)
-                {
-                    case 1: // Entry Level Phones
-                        if (selectedPhone == 1) phoneName = "Infinix Hot 50i 8GB RAM";
-                        else if (selectedPhone == 2) phoneName = "Infinix Smart 9 8GB RAM";
-                        else if (selectedPhone == 3) phoneName = "Infinix Note 40s 8GB RAM";
-                        break;
-                    case 2: // Mid-range Phones
-                        if (selectedPhone == 1) phoneName = "Infinix Note 40 5G 20GB RAM";
-                        else if (selectedPhone == 2) phoneName = "Infinix GT 20 Pro 5G 20GB RAM";
-                        break;
-                    case 3: // High-end Phones
-                        if (selectedPhone == 1) phoneName = "Infinix Zero Flip 32GB RAM";
-                        break;
-                }
-
-                if (string.IsNullOrEmpty(phoneName))
-                {
-                    Console.WriteLine("Invalid selection, please try again.");
-                    continue;
-                }
-
-                Console.WriteLine($"Check-in {phoneName}?");
-                Console.WriteLine("[1] Yes\n[2] No");
-                int checkInChoice = Convert.ToInt16(Console.ReadLine());
-
-                if (checkInChoice == 1)
-                {
-                    Console.WriteLine($"Wow! You bought {phoneName}!");
-                    Console.ReadKey();
-                    Console.WriteLine("Thank you for shopping! Come Again!");
-                    Console.ReadKey();
-                    return;
-                }
-                else
-                {
-                    Console.WriteLine("Returning to main menu...");
+                    Console.WriteLine($"------------------- \n{cart[userChoice - 1]} removed from cart!");
+                    cart.RemoveAt(userChoice - 1);
                 }
             }
+            DisplayMainMenu();
+        }
+
+        static void ViewCart()
+        {
+            Console.WriteLine("------------------- \nVIEW CART:");
+            if (cart.Count == 0)
+            {
+                Console.WriteLine("Your cart is empty!");
+            }
+            else
+            {
+                foreach (var item in cart)
+                {
+                    Console.WriteLine(item);
+                }
+            }
+            DisplayMainMenu();
+        }
+
+        static int GetUserInput()
+        {
+            Console.Write("[User Input]:  ");
+            string input = Console.ReadLine();
+            if (int.TryParse(input, out int userInput))
+            {
+                Thread.Sleep(500);
+                return userInput;
+            }
+            Console.WriteLine("Invalid input! Please enter a valid number.");
+            return GetUserInput(); // Recursively ask for correct input
         }
     }
 }

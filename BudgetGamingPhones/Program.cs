@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using InfinixShop_BusinessLogic;
+using InfinixShop_BusinessLogic; 
 
 namespace InfinixShop
 {
-    class Program
+    internal class Program
     {
         static string[] mainMenuOptions = { "[1] Add Item", "[2] Remove Item", "[3] View Cart", "[4] Exit" };
         static string[] phoneCategories = { "[1] Entry Level Phones", "[2] Mid-range Phones", "[3] High-end Phones", "[4] Back" };

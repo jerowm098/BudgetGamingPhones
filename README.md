@@ -2,6 +2,7 @@
 where users can browse different categories of Infinix smartphones, add them to their cart, remove items, and view their cart. The system uses menus and user input handling to navigate through different options.
 
 Functions of the System:
+
 The Infinix Shop System is an interactive console-based shopping application that provides a structured shopping experience. Users can:
 
  - View the main menu with options to add items, remove items, view the cart, or exit.

@@ -3,8 +3,6 @@ where users can browse different categories of Infinix smartphones, add them to 
 
 Functions of the System:
 
-The Infinix Shop System is an interactive console-based shopping application that provides a structured shopping experience. Users can:
-
  - View the main menu with options to add items, remove items, view the cart, or exit.
 
  - Navigate through categories of phones such as Entry Level, Mid-Range, and High-End Phones.

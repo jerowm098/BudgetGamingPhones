@@ -1,8 +1,7 @@
 # Budget Gaming Phone Shop System
 where users can browse different categories of Infinix smartphones, add them to their cart, remove items, and view their cart. The system uses menus and user input handling to navigate through different options.
 
-# Whats New in the System?
-The Infinix Shop System is an interactive console-based shopping application that provides a structured shopping experience. Users can:
+Functions of the System:
 
  - View the main menu with options to add items, remove items, view the cart, or exit.
 
@@ -12,5 +11,7 @@ The Infinix Shop System is an interactive console-based shopping application tha
 
  - Remove items from the cart if needed.
 
-View the list of selected items in the cart before finalizing their decision.
-Receive user-friendly error handling and prompts to ensure smooth navigation.
+# Whats New?
+Infinix Shop Business Logic:
+
+this class added some features for better user interface experience, to ensures proper management of the cart by providing structured methods for adding to cart , retrieving the items, and removing items from cart.

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using InfinixShop_BusinessLogic; 
+using InfinixShop_BusinessLogic;
 
-namespace InfinixShop
+namespace BudgetGamingPhones
 {
     internal class Program
     {

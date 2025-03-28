@@ -5,8 +5,6 @@ VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetGamingPhones", "BudgetGamingPhones\BudgetGamingPhones.csproj", "{55083413-9D81-4852-9649-ED9D2E0D8CFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfinixShop_BusinessLogic", "BudgetGamingPhones\InfinixShop_BusinessLogic\InfinixShop_BusinessLogic.csproj", "{77F78BCE-B954-4759-8DB8-09128F38F19A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{55083413-9D81-4852-9649-ED9D2E0D8CFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55083413-9D81-4852-9649-ED9D2E0D8CFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55083413-9D81-4852-9649-ED9D2E0D8CFE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{77F78BCE-B954-4759-8DB8-09128F38F19A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{77F78BCE-B954-4759-8DB8-09128F38F19A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{77F78BCE-B954-4759-8DB8-09128F38F19A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{77F78BCE-B954-4759-8DB8-09128F38F19A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

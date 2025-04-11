@@ -25,7 +25,7 @@ namespace InfinixShop_DataLogic
             return new List<PhoneItem>(phoneCart);
         }
 
-        public bool UpdateItem(int id, string newName) // Update (Rename a phone item based on its ID)
+        public bool UpdateItem(int id, string newName) // Update (Update a phone item based on its ID)
         {
             var item = phoneCart.FirstOrDefault(p => p.Id == id);
             if (item != null)

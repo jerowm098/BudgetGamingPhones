@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfinixShop_BusinessLogic",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfinixShop_DataLogic", "InfinixShop_DataLogic\InfinixShop_DataLogic.csproj", "{4E23BC1E-3A25-4229-A45D-CF20E126D804}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfinixShop_Common", "InfinixShop_Common\InfinixShop_Common.csproj", "{AFA7A797-ECA8-4003-9295-0BEF4B2CA173}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{4E23BC1E-3A25-4229-A45D-CF20E126D804}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E23BC1E-3A25-4229-A45D-CF20E126D804}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E23BC1E-3A25-4229-A45D-CF20E126D804}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFA7A797-ECA8-4003-9295-0BEF4B2CA173}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFA7A797-ECA8-4003-9295-0BEF4B2CA173}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFA7A797-ECA8-4003-9295-0BEF4B2CA173}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFA7A797-ECA8-4003-9295-0BEF4B2CA173}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

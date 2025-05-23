@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\InfinixShop_BusinessLogic\InfinixShop_BusinessLogic.csproj" />
+    <ProjectReference Include="..\InfinixShop_Common\InfinixShop_Common.csproj" />
   </ItemGroup>
 
 </Project>

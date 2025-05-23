@@ -1,31 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Linq;
 using InfinixShop_Common;
 
 namespace InfinixShop_DataLogic
 {
-    public class PhoneDataService
+    public class InMemoryPhoneDataService : IPhoneDataService
     {
         private static List<PhoneItem> phoneCart = new List<PhoneItem>();
         private static int idCounter = 1;
 
-        public bool AddItem(string name) // Create (Add a phone item to the cart)
+        public bool AddItem(string name)
         {
-            if (phoneCart.Any(p => p.Name == name))
-                return false;
-
+            if (phoneCart.Any(p => p.Name == name)) return false;
             phoneCart.Add(new PhoneItem(idCounter++, name));
             return true;
         }
 
-        public List<PhoneItem> GetAllItems() // Read/View (Get all phone items in the cart)
+        public List<PhoneItem> GetAllItems()
         {
             return new List<PhoneItem>(phoneCart);
         }
 
-        public bool UpdateItem(int id, string newName) // Update (Update a phone item based on its ID)
+        public bool UpdateItem(int id, string newName)
         {
             var item = phoneCart.FirstOrDefault(p => p.Id == id);
             if (item != null)
@@ -36,7 +32,7 @@ namespace InfinixShop_DataLogic
             return false;
         }
 
-        public bool DeleteItem(int id) // Delete (Remove a phone item based on its ID)
+        public bool DeleteItem(int id)
         {
             var item = phoneCart.FirstOrDefault(p => p.Id == id);
             if (item != null)
@@ -47,7 +43,7 @@ namespace InfinixShop_DataLogic
             return false;
         }
 
-        public PhoneItem SearchItemByName(string name) // Search (Search for a phone item by name)
+        public PhoneItem SearchItemByName(string name)
         {
             return phoneCart.FirstOrDefault(p => p.Name.ToLower().Contains(name.ToLower()));
         }

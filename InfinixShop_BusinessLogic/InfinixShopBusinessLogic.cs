@@ -1,38 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using InfinixShop_Common;
+using InfinixShop_DataLogic;
 
 namespace InfinixShop_BusinessLogic
 {
-    public class InfinixShopLogic
+    public static class InfinixShopLogic
     {
-        private static List<string> cart = new List<string>();
+        // Swap this with TextFilePhoneDataService or JsonFilePhoneDataService to change storage
+        private static IPhoneDataService dataService = new InMemoryPhoneDataService();
+        // private static IPhoneDataService dataService = new TextFilePhoneDataService();
+        // private static IPhoneDataService dataService = new JsonFilePhoneDataService();
 
-        // Method to add an item to the cart
-        public static bool AddToCart(string item)
+        public static bool AddToCart(string phoneName)
         {
-            if (string.IsNullOrEmpty(item) || cart.Contains(item))
-                return false;
-
-            cart.Add(item);
-            return true;
+            return dataService.AddItem(phoneName);
         }
-        // Method to remove an item from the cart
-        public static bool RemoveFromCart(int index)
+
+        public static bool RemoveFromCart(string phoneName)
         {
-            if (index >= 0 && index < cart.Count)
-            {
-                cart.RemoveAt(index);
-                return true;
-            }
+            var item = dataService.SearchItemByName(phoneName);
+            if (item != null)
+                return dataService.DeleteItem(item.Id);
             return false;
         }
-        // Method to get all cart items
+
         public static List<string> GetCartItems()
         {
-            return new List<string>(cart); // Return a copy of the cart to prevent external modification
+            return dataService.GetAllItems().Select(p => p.Name).ToList();
         }
     }
 }

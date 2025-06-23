@@ -2,7 +2,7 @@
  - where users can browse different categories of Infinix smartphones.
 
 Functions for Ui Logic:
-- add them to their cart, remove items, and view their cart. The system uses menus and user input handling to navigate through different options.
+- add them to their cart, remove items, and view their cart. system uses menus and user input handling to navigate through different options.
 
 Improvements for Managing Data Storage in Business Logic:
  - improves some features for better user interface experience, to ensures proper management of the cart.

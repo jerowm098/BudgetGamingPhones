@@ -5,7 +5,7 @@ Functions for Ui Logic:
 - add them to their cart, remove items, and view their cart. The system uses menus and user input handling to navigate through different options.
 
 Improvements for Managing Data Storage in Business Logic:
- - improving some features for better user interface experience, to ensures proper management of the cart.
+ - improves some features for better user interface experience, to ensures proper management of the cart.
 
 Improvements for Data Handling in Data Logic:
  - better ways to manage items in the cart. Plus, the app can now save information in more ways, like directly in its memory, in a simple text file, or in a json file.

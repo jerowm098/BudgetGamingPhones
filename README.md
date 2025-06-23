@@ -9,11 +9,12 @@ Improvements for Managing Data Storage in Business Logic:
 
 Improvements for Data Handling in Data Logic:
  - better ways to manage items in the cart. plus, the app can now save information in more ways, like directly in its memory, in a simple text file, or in a json file.
+ - connections with sql server management studio.
 
 Creating Functions for Desktop Ui:
- - using Windows Form App
+ - using Windows Form App.
 
 # Whats New?
 
 Creating Functions for Web Api Ui:
-- connections with Swagger and Postman:
+- connections with Swagger and Postman.

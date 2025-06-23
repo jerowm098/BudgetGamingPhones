@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfinixShop_MainUi", "BudgetGamingPhones\InfinixShop_MainUi.csproj", "{55083413-9D81-4852-9649-ED9D2E0D8CFE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfinixShop_BusinessLogic", "InfinixShop_BusinessLogic\InfinixShop_BusinessLogic.csproj", "{BC2056E9-25AF-E507-19A4-774A5320EACA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfinixShop_BusinessLogic", "InfinixShop_BusinessLogic\InfinixShop_BusinessLogic.csproj", "{B47B816E-5213-435A-8CFC-4A228D9E7BC6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfinixShop_Common", "InfinixShop_Common\InfinixShop_Common.csproj", "{C51945E4-4CA6-2FB3-3AEE-65D2095E7D9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfinixShop_DataLogic", "InfinixShop_DataLogic\InfinixShop_DataLogic.csproj", "{4E23BC1E-3A25-4229-A45D-CF20E126D804}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfinixShop_DataLogic", "InfinixShop_DataLogic\InfinixShop_DataLogic.csproj", "{B6DB8A33-8B9F-6C79-D77A-4A854F21089E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfinixShop_Common", "InfinixShop_Common\InfinixShop_Common.csproj", "{AFA7A797-ECA8-4003-9295-0BEF4B2CA173}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfinixShop_DesktopUI", "InfinixShop_DesktopUI\InfinixShop_DesktopUI.csproj", "{492750B2-500E-BB6B-DB96-31B27B20B914}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfinixShop_WebapiUI", "InfinixShop_Api\InfinixShop_WebapiUI.csproj", "{8574CE4E-6579-53E8-8C42-1D019CBC9CDE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfinixShop_MainUi", "InfinixShop_MainUi\InfinixShop_MainUi.csproj", "{87FD6774-D21A-182D-76F3-A67B94CA1DA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfinixShop_DesktopUI", "Infinix_Desktop\InfinixShop_DesktopUI.csproj", "{FD018A2C-44AA-EC63-A63D-8F9ABB0B3565}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfinixShop_WebapiUI", "InfinixShop_WebapiUI\InfinixShop_WebapiUI.csproj", "{E22D22A5-0E9D-43BB-7914-625ACA339CF8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,30 +21,30 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{55083413-9D81-4852-9649-ED9D2E0D8CFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{55083413-9D81-4852-9649-ED9D2E0D8CFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{55083413-9D81-4852-9649-ED9D2E0D8CFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{55083413-9D81-4852-9649-ED9D2E0D8CFE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B47B816E-5213-435A-8CFC-4A228D9E7BC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B47B816E-5213-435A-8CFC-4A228D9E7BC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B47B816E-5213-435A-8CFC-4A228D9E7BC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B47B816E-5213-435A-8CFC-4A228D9E7BC6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4E23BC1E-3A25-4229-A45D-CF20E126D804}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4E23BC1E-3A25-4229-A45D-CF20E126D804}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4E23BC1E-3A25-4229-A45D-CF20E126D804}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4E23BC1E-3A25-4229-A45D-CF20E126D804}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AFA7A797-ECA8-4003-9295-0BEF4B2CA173}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AFA7A797-ECA8-4003-9295-0BEF4B2CA173}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AFA7A797-ECA8-4003-9295-0BEF4B2CA173}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AFA7A797-ECA8-4003-9295-0BEF4B2CA173}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8574CE4E-6579-53E8-8C42-1D019CBC9CDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8574CE4E-6579-53E8-8C42-1D019CBC9CDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8574CE4E-6579-53E8-8C42-1D019CBC9CDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8574CE4E-6579-53E8-8C42-1D019CBC9CDE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FD018A2C-44AA-EC63-A63D-8F9ABB0B3565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FD018A2C-44AA-EC63-A63D-8F9ABB0B3565}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FD018A2C-44AA-EC63-A63D-8F9ABB0B3565}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FD018A2C-44AA-EC63-A63D-8F9ABB0B3565}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC2056E9-25AF-E507-19A4-774A5320EACA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC2056E9-25AF-E507-19A4-774A5320EACA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC2056E9-25AF-E507-19A4-774A5320EACA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC2056E9-25AF-E507-19A4-774A5320EACA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C51945E4-4CA6-2FB3-3AEE-65D2095E7D9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C51945E4-4CA6-2FB3-3AEE-65D2095E7D9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C51945E4-4CA6-2FB3-3AEE-65D2095E7D9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C51945E4-4CA6-2FB3-3AEE-65D2095E7D9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6DB8A33-8B9F-6C79-D77A-4A854F21089E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6DB8A33-8B9F-6C79-D77A-4A854F21089E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6DB8A33-8B9F-6C79-D77A-4A854F21089E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6DB8A33-8B9F-6C79-D77A-4A854F21089E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{492750B2-500E-BB6B-DB96-31B27B20B914}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{492750B2-500E-BB6B-DB96-31B27B20B914}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{492750B2-500E-BB6B-DB96-31B27B20B914}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{492750B2-500E-BB6B-DB96-31B27B20B914}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87FD6774-D21A-182D-76F3-A67B94CA1DA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87FD6774-D21A-182D-76F3-A67B94CA1DA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87FD6774-D21A-182D-76F3-A67B94CA1DA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87FD6774-D21A-182D-76F3-A67B94CA1DA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E22D22A5-0E9D-43BB-7914-625ACA339CF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E22D22A5-0E9D-43BB-7914-625ACA339CF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E22D22A5-0E9D-43BB-7914-625ACA339CF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E22D22A5-0E9D-43BB-7914-625ACA339CF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

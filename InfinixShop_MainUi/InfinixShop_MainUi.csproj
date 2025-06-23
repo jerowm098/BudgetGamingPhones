@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\InfinixShop_BusinessLogic\InfinixShop_BusinessLogic.csproj" />
-    <ProjectReference Include="..\InfinixShop_DataLogic\InfinixShop_DataLogic.csproj" />
   </ItemGroup>
 
 </Project>

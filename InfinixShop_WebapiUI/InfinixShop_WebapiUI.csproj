@@ -1,17 +1,21 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
-    <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="9.0.1" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\InfinixShop_BusinessLogic\InfinixShop_BusinessLogic.csproj" />
     <ProjectReference Include="..\InfinixShop_Common\InfinixShop_Common.csproj" />
     <ProjectReference Include="..\InfinixShop_DataLogic\InfinixShop_DataLogic.csproj" />
+    <ProjectReference Include="..\InfinixShop_MainUi\InfinixShop_MainUi.csproj" />
   </ItemGroup>
 
 </Project>

@@ -5,10 +5,10 @@ Functions for Ui Logic:
 - add them to their cart, remove items, and view their cart. The system uses menus and user input handling to navigate through different options.
 
 Improvements for Managing Data Storage in Business Logic:
- - this class added some features for better user interface experience, to ensures proper management of the cart.
+ - improving some features for better user interface experience, to ensures proper management of the cart.
 
 Improvements for Data Handling in Data Logic:
- - this system now has better ways to manage items in the cart. Plus, the app can now save your information in more ways, like directly in its memory, in a simple text file, or in a JSON file.
+ - better ways to manage items in the cart. Plus, the app can now save information in more ways, like directly in its memory, in a simple text file, or in a json file.
 
 Creating Functions for Desktop Ui:
  - using Windows Form App

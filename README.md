@@ -16,4 +16,4 @@ Creating Functions for Desktop Ui:
 # Whats New?
 
 Creating Functions for Web Api Ui:
-- connection with Swagger and Postman:
+- connections with Swagger and Postman:

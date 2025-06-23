@@ -13,7 +13,7 @@ namespace InfinixShop_DataLogic
         public bool AddItem(string name)
         {
             var items = GetAllItems();
-            if (items.Any(p => p.Name == name)) return false;
+            if (items.Any(p => p.Name.Equals(name, System.StringComparison.OrdinalIgnoreCase))) return false;
 
             int newId = items.Any() ? items.Max(p => p.Id) + 1 : 1;
             items.Add(new PhoneItem(newId, name));

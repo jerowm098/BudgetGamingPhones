@@ -6,46 +6,46 @@ namespace InfinixShop_DataLogic
 {
     public class InMemoryPhoneDataService : IPhoneDataService
     {
-        private static List<PhoneItem> phoneCart = new List<PhoneItem>();
-        private static int idCounter = 1;
+        private static List<PhoneItem> _phoneItems = new List<PhoneItem>();
+        private static int _nextId = 1;
 
         public bool AddItem(string name)
         {
-            if (phoneCart.Any(p => p.Name == name)) return false;
-            phoneCart.Add(new PhoneItem(idCounter++, name));
+            if (_phoneItems.Any(p => p.Name.Equals(name, System.StringComparison.OrdinalIgnoreCase)))
+            {
+                return false;
+            }
+
+            _phoneItems.Add(new PhoneItem(_nextId++, name));
             return true;
         }
 
         public List<PhoneItem> GetAllItems()
         {
-            return new List<PhoneItem>(phoneCart);
+            return new List<PhoneItem>(_phoneItems);
         }
 
         public bool UpdateItem(int id, string newName)
         {
-            var item = phoneCart.FirstOrDefault(p => p.Id == id);
-            if (item != null)
-            {
-                item.Name = newName;
-                return true;
-            }
-            return false;
+            var item = _phoneItems.FirstOrDefault(p => p.Id == id);
+            if (item == null) return false;
+
+            item.Name = newName;
+            return true;
         }
 
         public bool DeleteItem(int id)
         {
-            var item = phoneCart.FirstOrDefault(p => p.Id == id);
-            if (item != null)
-            {
-                phoneCart.Remove(item);
-                return true;
-            }
-            return false;
+            var item = _phoneItems.FirstOrDefault(p => p.Id == id);
+            if (item == null) return false;
+
+            _phoneItems.Remove(item);
+            return true;
         }
 
         public PhoneItem SearchItemByName(string name)
         {
-            return phoneCart.FirstOrDefault(p => p.Name.ToLower().Contains(name.ToLower()));
+            return _phoneItems.FirstOrDefault(p => p.Name.ToLower().Contains(name.ToLower()));
         }
     }
 }

@@ -7,8 +7,11 @@ namespace InfinixShop_BusinessLogic
 {
     public static class InfinixShopLogic
     {
-        // Swap this with TextFilePhoneDataService or JsonFilePhoneDataService to change storage
-        private static IPhoneDataService dataService = new InMemoryPhoneDataService();
+        // IMPORTANT: Configured to use SqlPhoneDataService for database persistence!
+        private static IPhoneDataService dataService = new SqlPhoneDataService();
+
+        // Uncomment one of these if you want to switch back to file/in-memory storage:
+        // private static IPhoneDataService dataService = new InMemoryPhoneDataService();
         // private static IPhoneDataService dataService = new TextFilePhoneDataService();
         // private static IPhoneDataService dataService = new JsonFilePhoneDataService();
 
@@ -25,9 +28,19 @@ namespace InfinixShop_BusinessLogic
             return false;
         }
 
-        public static List<string> GetCartItems()
+        public static List<string> GetCartItemNames()
         {
             return dataService.GetAllItems().Select(p => p.Name).ToList();
+        }
+
+        public static List<PhoneItem> GetAllItemsInCart()
+        {
+            return dataService.GetAllItems();
+        }
+
+        public static PhoneItem SearchPhoneByName(string name)
+        {
+            return dataService.SearchItemByName(name);
         }
     }
 }

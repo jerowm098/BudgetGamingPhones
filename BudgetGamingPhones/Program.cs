@@ -108,7 +108,7 @@ namespace InfinixShop
         {
             Console.WriteLine("\n------------------- \nREMOVE ITEM:");
 
-            List<string> cartItems = InfinixShopLogic.GetCartItems();
+            List<string> cartItems = InfinixShopLogic.GetCartItemNames();
             if (!cartItems.Any())
             {
                 Console.WriteLine("Your cart is empty!");
@@ -141,7 +141,7 @@ namespace InfinixShop
         static void ViewCart()
         {
             Console.WriteLine("\n------------------- \nVIEW CART:");
-            List<string> cartItems = InfinixShopLogic.GetCartItems();
+            List<string> cartItems = InfinixShopLogic.GetCartItemNames();
 
             if (!cartItems.Any())
             {

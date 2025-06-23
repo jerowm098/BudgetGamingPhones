@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetGamingPhones", "BudgetGamingPhones\BudgetGamingPhones.csproj", "{55083413-9D81-4852-9649-ED9D2E0D8CFE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfinixShop_MainUi", "BudgetGamingPhones\InfinixShop_MainUi.csproj", "{55083413-9D81-4852-9649-ED9D2E0D8CFE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfinixShop_BusinessLogic", "InfinixShop_BusinessLogic\InfinixShop_BusinessLogic.csproj", "{B47B816E-5213-435A-8CFC-4A228D9E7BC6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfinixShop_DataLogic", "InfinixShop_DataLogic\InfinixShop_DataLogic.csproj", "{4E23BC1E-3A25-4229-A45D-CF20E126D804}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfinixShop_Common", "InfinixShop_Common\InfinixShop_Common.csproj", "{AFA7A797-ECA8-4003-9295-0BEF4B2CA173}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfinixShop_WebapiUI", "InfinixShop_Api\InfinixShop_WebapiUI.csproj", "{8574CE4E-6579-53E8-8C42-1D019CBC9CDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfinixShop_DesktopUI", "Infinix_Desktop\InfinixShop_DesktopUI.csproj", "{FD018A2C-44AA-EC63-A63D-8F9ABB0B3565}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{AFA7A797-ECA8-4003-9295-0BEF4B2CA173}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFA7A797-ECA8-4003-9295-0BEF4B2CA173}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFA7A797-ECA8-4003-9295-0BEF4B2CA173}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8574CE4E-6579-53E8-8C42-1D019CBC9CDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8574CE4E-6579-53E8-8C42-1D019CBC9CDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8574CE4E-6579-53E8-8C42-1D019CBC9CDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8574CE4E-6579-53E8-8C42-1D019CBC9CDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD018A2C-44AA-EC63-A63D-8F9ABB0B3565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD018A2C-44AA-EC63-A63D-8F9ABB0B3565}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD018A2C-44AA-EC63-A63D-8F9ABB0B3565}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD018A2C-44AA-EC63-A63D-8F9ABB0B3565}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

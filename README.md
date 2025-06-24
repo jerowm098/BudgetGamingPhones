@@ -3,7 +3,7 @@
 
 Creating Functions for Ui Logic:
 - system uses menus and user input handling to navigate through different options.
-- add them to their cart, remove items, and view their cart.
+- adding them to their cart, remove items, and view their cart.
 
 Improvements for Managing Data Storage in Business Logic:
  - improves user interface experience, to ensures proper management of the cart.

@@ -3,10 +3,10 @@ using InfinixShop_BusinessLogic;
 using InfinixShop_Common;
 using System.Collections.Generic;
 
-// The namespace for your API project
+// namespace for API project
 namespace InfinixShop_Api.Controllers
 {
-    [Route("api/[controller]")] // [controller] will automatically resolve to InfinixShop_Api
+    [Route("api/[controller]")] // [controller]
     [ApiController]
     public class InfinixShop_Api : ControllerBase
     {

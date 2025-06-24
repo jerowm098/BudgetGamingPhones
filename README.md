@@ -1,4 +1,4 @@
-# Budget Gaming Phone System
+# System for Budget gaming phone Shop
  - where users can browse different categories of Infinix smartphones.
 
 Creating Functions for MainLogic Ui:

@@ -12,7 +12,7 @@
     <ProjectReference Include="..\InfinixShop_BusinessLogic\InfinixShop_BusinessLogic.csproj" />
     <ProjectReference Include="..\InfinixShop_Common\InfinixShop_Common.csproj" />
     <ProjectReference Include="..\InfinixShop_DataLogic\InfinixShop_DataLogic.csproj" />
-    <ProjectReference Include="..\InfinixShop_MainUi\InfinixShop_MainUi.csproj" />
+    <ProjectReference Include="..\InfinixShop_MainUi\InfinixShop_MainLogicUi.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,7 @@
 # System for Budget gaming phone Shop
  - where users can browse different categories of Infinix smartphones.
 
+
 Creating Functions for MainLogic Ui:
 - system uses menus and user input handling to navigate through different options.
 - adding them to their cart, remove items and view their cart.
@@ -16,6 +17,7 @@ Improvements for Data Handling in Data Logic:
 
 Creating Functions for Desktop Ui:
 - using Windows Form App.
+
 
 # Whats New?
 

@@ -13,8 +13,8 @@ namespace InfinixShop_BusinessLogic
         // Uncomment one of these if you want to switch back to file/in-memory storage:
 
         // private static IPhoneDataService dataService = new InMemoryPhoneDataService();
-         private static IPhoneDataService dataService = new TextFilePhoneDataService();
-        // private static IPhoneDataService dataService = new JsonFilePhoneDataService();
+        // private static IPhoneDataService dataService = new TextFilePhoneDataService();
+        private static IPhoneDataService dataService = new JsonFilePhoneDataService();
 
         public static bool AddToCart(string phoneName)
         {

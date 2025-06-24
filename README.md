@@ -11,7 +11,7 @@ Improvements for Managing Data Storage in Business Logic:
 
 Improvements for Data Handling in Data Logic:
  - better ways to manage items in the cart.
- - plus, system can now save your information in more ways, like directly in memory, in a simple text file, or in a json file.
+ - plus, it can now save your information in more ways, like directly in memory, in a simple text file, or in a json file.
  - connections with sql server management studio.
 
 Creating Functions for Desktop Ui:

@@ -15,9 +15,9 @@ Improvements for Data Handling in Data Logic:
  - connections with sql server management studio.
 
 Creating Functions for Desktop Ui:
- - using Windows Form App.
+- using Windows Form App.
 
 # Whats New?
 
 Creating Functions for Web Api Ui:
-- connections with Swagger and Postman.
+- using Swagger and Postman.

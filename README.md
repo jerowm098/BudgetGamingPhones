@@ -1,7 +1,7 @@
 # Budget Gaming Phone System
  - where users can browse different categories of Infinix smartphones.
 
-Creating Functions for Ui Logic:
+Creating Functions for MainLogic Ui:
 - system uses menus and user input handling to navigate through different options.
 - adding them to their cart, remove items, and view their cart.
 

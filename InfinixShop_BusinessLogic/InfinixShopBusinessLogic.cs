@@ -7,26 +7,38 @@ namespace InfinixShop_BusinessLogic
 {
     public static class InfinixShopLogic
     {
-        // IMPORTANT: Configured to use SqlPhoneDataService for database persistence!
-        //  private static IPhoneDataService dataService = new SqlPhoneDataService();
-
-        // Uncomment one of these if you want to switch back to file/in-memory storage:
-
+        // private static IPhoneDataService dataService = new SqlPhoneDataService();
         // private static IPhoneDataService dataService = new InMemoryPhoneDataService();
-         private static IPhoneDataService dataService = new TextFilePhoneDataService();
-        // private static IPhoneDataService dataService = new JsonFilePhoneDataService();
+        // private static IPhoneDataService dataService = new TextFilePhoneDataService();
+        private static IPhoneDataService dataService = new JsonFilePhoneDataService();
 
-        public static bool AddToCart(string phoneName)
+        public static PhoneItem AddToCart(string phoneName)
         {
-            return dataService.AddItem(phoneName);
+            var existingItem = dataService.SearchItemByName(phoneName);
+            if (existingItem != null)
+            {
+                return null;
+            }
+            bool addedSuccessfully = dataService.AddItem(phoneName);
+            if (addedSuccessfully)
+            {
+                return dataService.SearchItemByName(phoneName);
+            }
+            return null;
         }
 
-        public static bool RemoveFromCart(string phoneName)
+        public static PhoneItem RemoveFromCart(string phoneName)
         {
-            var item = dataService.SearchItemByName(phoneName);
-            if (item != null)
-                return dataService.DeleteItem(item.Id);
-            return false;
+            var itemToRemove = dataService.SearchItemByName(phoneName);
+            if (itemToRemove != null)
+            {
+                bool deleted = dataService.DeleteItem(itemToRemove.Id);
+                if (deleted)
+                {
+                    return itemToRemove;
+                }
+            }
+            return null;
         }
 
         public static List<string> GetCartItemNames()
@@ -42,6 +54,16 @@ namespace InfinixShop_BusinessLogic
         public static PhoneItem SearchPhoneByName(string name)
         {
             return dataService.SearchItemByName(name);
+        }
+
+        public static PhoneItem UpdatePhoneName(int id, string newName)
+        {
+            bool updated = dataService.UpdateItem(id, newName);
+            if (updated)
+            {
+                return dataService.SearchItemByName(newName);
+            }
+            return null;
         }
     }
 }

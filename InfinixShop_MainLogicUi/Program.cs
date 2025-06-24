@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using InfinixShop_BusinessLogic;
+using InfinixShop_Common;
 
 namespace InfinixShop
 {
@@ -85,21 +86,35 @@ namespace InfinixShop
         static void DisplayPhones(string[] phones)
         {
             Console.WriteLine("\n------------------- \nPick your Choice:");
-            foreach (var phone in phones)
-                Console.WriteLine(phone);
+            for (int i = 0; i < phones.Length; i++)
+            {
+                Console.WriteLine(phones[i]);
+            }
 
             int userChoice = GetUserInput();
+            if (userChoice == phones.Length)
+            {
+                DisplayPhoneCategories();
+                return;
+            }
+
             if (userChoice >= 1 && userChoice < phones.Length)
             {
                 string selectedPhone = phones[userChoice - 1].Substring(4);
-                if (InfinixShopLogic.AddToCart(selectedPhone))
+                PhoneItem addedItem = InfinixShopLogic.AddToCart(selectedPhone);
+
+                if (addedItem != null)
                 {
                     Console.WriteLine($"\n------------------- \n{selectedPhone} added to cart!");
                 }
                 else
                 {
-                    Console.WriteLine("Item is already in the cart!");
+                    Console.WriteLine("Item is already in the cart or failed to add!");
                 }
+            }
+            else
+            {
+                Console.WriteLine("Invalid choice! Try again.");
             }
             DisplayMainMenu();
         }
@@ -122,17 +137,28 @@ namespace InfinixShop
             Console.WriteLine("[0] Back");
 
             int userChoice = GetUserInput();
+            if (userChoice == 0)
+            {
+                DisplayMainMenu();
+                return;
+            }
+
             if (userChoice > 0 && userChoice <= cartItems.Count)
             {
                 string itemToRemove = cartItems[userChoice - 1];
-                if (InfinixShopLogic.RemoveFromCart(itemToRemove))
+                PhoneItem removedItem = InfinixShopLogic.RemoveFromCart(itemToRemove);
+                if (removedItem != null)
                 {
                     Console.WriteLine($"\n------------------- \n{itemToRemove} removed from cart!");
                 }
                 else
                 {
-                    Console.WriteLine("Failed to remove the item from the cart.");
+                    Console.WriteLine("Failed to remove the item from the cart (item not found).");
                 }
+            }
+            else
+            {
+                Console.WriteLine("Invalid choice! Please select a valid item number or 0 to go back.");
             }
 
             DisplayMainMenu();
@@ -149,13 +175,20 @@ namespace InfinixShop
             }
             else
             {
+                Console.WriteLine("Items in your cart:");
                 foreach (var item in cartItems)
-                    Console.WriteLine(item);
+                    Console.WriteLine($"- {item}");
             }
 
             Console.WriteLine("[0] Back");
-            if (GetUserInput() == 0)
+            int userChoice = GetUserInput();
+            if (userChoice == 0)
                 DisplayMainMenu();
+            else
+            {
+                Console.WriteLine("Invalid input. Press 0 to go back.");
+                ViewCart();
+            }
         }
 
         static int GetUserInput()

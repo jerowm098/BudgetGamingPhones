@@ -2,11 +2,8 @@
 {
     partial class frmMain
     {
-        /// Required designer variable.
         private System.ComponentModel.IContainer components = null;
 
-        /// Clean up any resources being used.
-        /// <param name="disposing">
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -16,8 +13,6 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         private void InitializeComponent()
         {
@@ -270,7 +265,6 @@
 
         }
 
-        #endregion
 
         private Panel pnlWelcome;
         private Button btnNoThanks;

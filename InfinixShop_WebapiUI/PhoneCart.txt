@@ -1,3 +1,5 @@
-1|Infinix Note 40 5G 20GB RAM
-2|Infinix GT 20 Pro 5G 20GB RAM
-3|Infinix Zero Flip 32GB RAM
+1|Infinix Zero Flip 32GB RAM
+2|string
+3|Infinix Smart 9 8GB RAM
+4|Infinix Note 40s 8GB RAM
+5|Infinix Note 40s 8GB RAM

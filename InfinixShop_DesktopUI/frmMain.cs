@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using InfinixShop_BusinessLogic;
+using InfinixShop_Common;
 
 namespace InfinixShop_Desktop
 {
     public partial class frmMain : Form
-    { 
+    {
         private static string[] phoneCategories = { "Entry Level Phones", "Mid-range Phones", "High-end Phones" };
         private static Dictionary<string, string[]> phonesByCategory = new Dictionary<string, string[]>
         {
@@ -19,36 +20,30 @@ namespace InfinixShop_Desktop
         public frmMain()
         {
             InitializeComponent();
-            // Initially show the welcome panel and hide the main content panel
             pnlWelcome.Visible = true;
             pnlMainContent.Visible = false;
         }
 
-        // Event handler for when the form loads
         private void frmMain_Load(object sender, EventArgs e)
         {
-            // Populate the categories list box when the shop is viewed
             PopulateCategories();
         }
 
-        // --- Welcome Panel Button Clicks ---
         private void btnViewShop_Click(object sender, EventArgs e)
         {
             pnlWelcome.Visible = false;
             pnlMainContent.Visible = true;
-            // Select the Shop tab by default
             tabControlMain.SelectedTab = tabPageShop;
-            // Ensure categories are loaded
             PopulateCategories();
+            PopulateCartItems();
         }
 
         private void btnNoThanks_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Thank you for visiting! Have a great day!", "Goodbye", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close(); // Close the application
+            this.Close();
         }
 
-        // --- Shop Tab Logic ---
         private void PopulateCategories()
         {
             lbCategories.Items.Clear();
@@ -56,7 +51,6 @@ namespace InfinixShop_Desktop
             {
                 lbCategories.Items.Add(category);
             }
-            // Select the first category by default if available
             if (lbCategories.Items.Count > 0)
             {
                 lbCategories.SelectedIndex = 0;
@@ -65,7 +59,6 @@ namespace InfinixShop_Desktop
 
         private void lbCategories_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // When a category is selected, populate the available phones list box
             lbAvailablePhones.Items.Clear();
             if (lbCategories.SelectedItem != null)
             {
@@ -85,14 +78,16 @@ namespace InfinixShop_Desktop
             if (lbAvailablePhones.SelectedItem != null)
             {
                 string selectedPhone = lbAvailablePhones.SelectedItem.ToString();
-                if (InfinixShopLogic.AddToCart(selectedPhone))
+                PhoneItem addedItem = InfinixShopLogic.AddToCart(selectedPhone);
+
+                if (addedItem != null)
                 {
                     MessageBox.Show($"{selectedPhone} added to cart!", "Item Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    // Optionally switch to cart tab or just refresh cart view later
+                    PopulateCartItems();
                 }
                 else
                 {
-                    MessageBox.Show("Item is already in the cart!", "Duplicate Item", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Item is already in the cart or failed to add!", "Duplicate/Failed Item", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
@@ -100,15 +95,14 @@ namespace InfinixShop_Desktop
                 MessageBox.Show("Please select a phone to add to cart.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
-        // --- Cart Tab Logic ---
         private void PopulateCartItems()
         {
             lbCartItems.Items.Clear();
-            List<string> cartItems = InfinixShopLogic.GetCartItemNames();
-            if (cartItems.Any())
+            List<string> cartItemNames = InfinixShopLogic.GetCartItemNames();
+
+            if (cartItemNames.Any())
             {
-                foreach (var item in cartItems)
+                foreach (var item in cartItemNames)
                 {
                     lbCartItems.Items.Add(item);
                 }
@@ -121,7 +115,6 @@ namespace InfinixShop_Desktop
 
         private void btnRemoveSelectedFromCart_Click(object sender, EventArgs e)
         {
-            // Ensure "Your cart is empty!" message cannot be selected for removal
             if (lbCartItems.SelectedItem != null && lbCartItems.SelectedItem.ToString() != "Your cart is empty!")
             {
                 string itemToRemove = lbCartItems.SelectedItem.ToString();
@@ -129,14 +122,16 @@ namespace InfinixShop_Desktop
 
                 if (confirmResult == DialogResult.Yes)
                 {
-                    if (InfinixShopLogic.RemoveFromCart(itemToRemove))
+                    PhoneItem removedItem = InfinixShopLogic.RemoveFromCart(itemToRemove);
+
+                    if (removedItem != null)
                     {
                         MessageBox.Show($"{itemToRemove} removed from cart!", "Item Removed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        PopulateCartItems(); // Refresh the cart list
+                        PopulateCartItems();
                     }
                     else
                     {
-                        MessageBox.Show("Failed to remove the item from the cart.", "Removal Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Failed to remove the item from the cart (item not found or removal failed).", "Removal Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -146,7 +141,6 @@ namespace InfinixShop_Desktop
             }
         }
 
-        // --- Tab Control Index Change (to refresh cart when its tab is selected) ---
         private void tabControlMain_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tabControlMain.SelectedTab == tabPageCart)
@@ -154,11 +148,9 @@ namespace InfinixShop_Desktop
                 PopulateCartItems();
             }
         }
-
-        // --- Exit Button ---
         private void btnExitApp_Click(object sender, EventArgs e)
         {
-            Application.Exit(); // Exit the application
+            Application.Exit();
         }
     }
 }

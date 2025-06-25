@@ -22,4 +22,4 @@ Creating Functions for Desktop Ui:
 # Whats New?
 
 Creating Functions for Web Api Ui:
-- using with the Swagger ui and Postman.
+- using with the Swagger and Postman.

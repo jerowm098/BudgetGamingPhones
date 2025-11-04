@@ -18,8 +18,11 @@ Improvements for Data Handling in Data Logic:
 Creating Functions for Desktop Ui:
 - using Windows Form App.
 
+Creating Functions for Web Api Ui:
+- using with the Swagger and Postman.
 
 # Whats New?
 
-Creating Functions for Web Api Ui:
-- using with the Swagger and Postman.
+Implement Configuration Files:
+- configuring email settings for automail using mailtrap.
+

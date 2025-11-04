@@ -6,5 +6,17 @@
   {
     "Id": 2,
     "Name": "Infinix Note 40s 8GB RAM"
+  },
+  {
+    "Id": 3,
+    "Name": "string"
+  },
+  {
+    "Id": 4,
+    "Name": "Infinix GT 20 Pro 5G 20GB RAM"
+  },
+  {
+    "Id": 5,
+    "Name": "Infinix Smart 9 8GB RAM"
   }
 ]

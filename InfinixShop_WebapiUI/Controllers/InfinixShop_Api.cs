@@ -3,13 +3,13 @@ using InfinixShop_BusinessLogic;
 using InfinixShop_Common;
 using System.Collections.Generic;
 
-// namespace for API project
 namespace InfinixShop_Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class InfinixShop_Api : ControllerBase
     {
+
         [HttpGet("Get Items")]
         public ActionResult<IEnumerable<PhoneItem>> GetCart()
         {
@@ -28,6 +28,7 @@ namespace InfinixShop_Api.Controllers
             var addedItem = InfinixShopLogic.AddToCart(request.Name);
             if (addedItem != null)
             {
+
                 return CreatedAtAction(nameof(SearchPhone), new { name = addedItem.Name }, addedItem);
             }
             else

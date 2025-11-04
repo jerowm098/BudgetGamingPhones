@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using System.Data;
 using Microsoft.Data.SqlClient;
 using InfinixShop_Common;
+using Microsoft.Extensions.Configuration;
 
 namespace InfinixShop_DataLogic
 {
     public class SqlPhoneDataService : IPhoneDataService
     {
-        private readonly string connectionString =
-            "Data Source=localhost\\SQLEXPRESS; Initial Catalog=InfinixShopDB; Integrated Security=True; TrustServerCertificate=True;";
+        private readonly string connectionString;
+
+        // New constructor
+        public SqlPhoneDataService(IConfiguration configuration)
+        {
+            connectionString = configuration.GetConnectionString("SqlConnection");
+        }
 
         public bool AddItem(string name)
         {

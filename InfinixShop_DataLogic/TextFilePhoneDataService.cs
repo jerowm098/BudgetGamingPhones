@@ -1,14 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.Json;
 using InfinixShop_Common;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
 namespace InfinixShop_DataLogic
 {
     public class TextFilePhoneDataService : IPhoneDataService
     {
-        private readonly string filePath = "PhoneCart.txt";
+        private readonly string filePath;
+
+        public TextFilePhoneDataService()
+        {
+            filePath = "PhoneCart.txt";
+        }
 
         public bool AddItem(string name)
         {

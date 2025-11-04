@@ -3,12 +3,19 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using InfinixShop_Common;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
 namespace InfinixShop_DataLogic
 {
     public class JsonFilePhoneDataService : IPhoneDataService
     {
-        private readonly string filePath = "PhoneCart.json";
+        private readonly string filePath;
+
+        public JsonFilePhoneDataService()
+        {
+            filePath = "PhoneCart.json";
+        }
 
         public bool AddItem(string name)
         {

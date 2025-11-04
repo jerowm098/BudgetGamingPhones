@@ -11,7 +11,6 @@ namespace InfinixShop_DataLogic
     {
         private readonly string connectionString;
 
-        // New constructor
         public SqlPhoneDataService(IConfiguration configuration)
         {
             connectionString = configuration.GetConnectionString("SqlConnection");

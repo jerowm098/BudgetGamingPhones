@@ -62,7 +62,7 @@ namespace InfinixShop_BusinessLogic
             bool addedSuccessfully = dataService.AddItem(phoneName);
             if (addedSuccessfully)
             {
-                SendEmail("Jerome account"); // Replace with your real account number if needed
+                SendEmail("Jerome account");
                 return dataService.SearchItemByName(phoneName);
             }
             return null;

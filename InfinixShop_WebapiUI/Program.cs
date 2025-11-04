@@ -23,7 +23,7 @@ builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("Emai
 
 
 builder.Services.AddTransient<IPhoneDataService, JsonFilePhoneDataService>();
-
+//builder.Services.AddTransient<IPhoneDataService, TextFilePhoneDataService>();
 
 var app = builder.Build();
 
